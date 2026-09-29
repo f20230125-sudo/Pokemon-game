@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Pokémon Aurora — The Greyfall</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #0a0c16; overflow: hidden; }
+  body { display: flex; align-items: center; justify-content: center; font-family: system-ui, sans-serif; }
+  #screen {
+    image-rendering: pixelated; image-rendering: crisp-edges; display: block;
+    box-shadow: 0 0 0 3px #1b1f33, 0 0 0 6px #0f1220, 0 24px 80px rgba(0,0,0,.7);
+    border-radius: 3px; background: #000;
+  }
+  #touch { position: fixed; inset: 0; pointer-events: none; display: none; }
+  body.touch #touch { display: block; }
+  .tbtn {
+    position: absolute; pointer-events: auto; user-select: none; -webkit-user-select: none; touch-action: none;
+    background: rgba(255,255,255,.12); border: 2px solid rgba(255,255,255,.28); color: rgba(255,255,255,.75);
+    font: bold 18px system-ui, sans-serif; display: flex; align-items: center; justify-content: center;
+  }
+  .tbtn.on { background: rgba(255,255,255,.32); }
+  #dpad { position: absolute; left: 18px; bottom: 18px; width: 150px; height: 150px; }
+  #dpad .tbtn { width: 50px; height: 50px; border-radius: 10px; }
+  #t-up { left: 50px; top: 0; } #t-down { left: 50px; top: 100px; } #t-left { left: 0; top: 50px; } #t-right { left: 100px; top: 50px; }
+  #t-a { right: 22px; bottom: 70px; width: 64px; height: 64px; border-radius: 50%; }
+  #t-b { right: 96px; bottom: 26px; width: 58px; height: 58px; border-radius: 50%; }
+  #t-start { right: 30px; top: 18px; width: 76px; height: 30px; border-radius: 15px; font-size: 12px; }
+</style>
+</head>
+<body>
+<canvas id="screen" width="256" height="192"></canvas>
+<div id="touch">
+  <div id="dpad">
+    <div class="tbtn" id="t-up" data-b="up">▲</div>
+    <div class="tbtn" id="t-left" data-b="left">◀</div>
+    <div class="tbtn" id="t-right" data-b="right">▶</div>
+    <div class="tbtn" id="t-down" data-b="down">▼</div>
+  </div>
+  <div class="tbtn" id="t-a" data-b="a">A</div>
+  <div class="tbtn" id="t-b" data-b="b">B</div>
+  <div class="tbtn" id="t-start" data-b="start">MENU</div>
+</div>
+<script src="js/core.js"></script>
+<script src="js/font.js"></script>
+<script src="js/gfx.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/music.js"></script>
+<script src="js/data.js"></script>
+<script src="js/pokemon-sprites.js"></script>
+<script src="js/people-sprites.js"></script>
+<script src="js/tiles.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/pokemon.js"></script>
+<script src="js/battle-anims.js"></script>
+<script src="js/battle.js"></script>
+<script src="js/maps.js"></script>
+<script src="js/overworld.js"></script>
+<script src="js/story.js"></script>
+<script src="js/menus.js"></script>
+<script src="js/scenes.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
